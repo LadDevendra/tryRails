@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   root 'login#index'
   #Regular routes
   get 'about' => 'about#about'
+
+  resources :login
 end

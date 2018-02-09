@@ -14,7 +14,7 @@
 
   <body class="text-center" data-gr-c-s-loaded="true">
   	<!-- <div><h1>First Page ever in Ruby on Rails</h1></div> -->
-    <form class="form-signin">
+    <!-- <form class="form-signin">
       <div class="titlediv">
       	<h2>DEVENDRA LAD</h2>
       	<h2 class="h3 mb-3 title">Academic Projects</h2>
@@ -31,7 +31,31 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    </form>
+    </form> -->
+
+    
+    <%= form_for(:post, url:'login', html: {class: "form-signin"}) do |f| %>
+      <div class="titlediv">
+      	<h2>DEVENDRA LAD</h2>
+      	<h2 class="h3 mb-3 title">Academic Projects</h2>
+      </div>
+      <img border-radius="50%" class="mb-4" src="/assets/myself.png" alt="Avatar" width="170" height="200">
+      <h5 class=" font-weight-normal">Please sign in</h5>
+      
+      	<%= f.label(:email, {:class => 'sr-only', :for => 'inputEmail'}) %>
+      	<%= f.text_field(:email, {:class => 'form-control', :placeholder => 'Email address', :required => '',
+      	 :autofocus => '', :id => 'inputEmail', :type => 'email'}) %>
+      
+      	<%= f.label(:password, {:class => 'sr-only', :for => 'inputPassword'}) %>
+      	<%= f.text_field(:password, {:class => 'form-control', :placeholder => 'Password', :required => '',
+      	  :id => 'inputPassword', :type => 'password'}) %>
+      <p>	  
+      	<%= flash[:error] %>
+      </p>
+      <p>
+      	<%= f.submit( "Sign In", {:class => 'btn btn-lg btn-primary btn-block', :type=>"submit"}) %>
+      </p>
+    <% end %>
   
 
 </body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
